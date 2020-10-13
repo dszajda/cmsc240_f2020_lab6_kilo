@@ -39,18 +39,27 @@ int main()
    std::cout << "---------" << std::endl;
    IntegerVector PutTest;
    std::cout << "IntegerVector before put() method: " << std::endl;
-   std::cout << PutTest << std::endl;
+   for (int i = 0; i<PutTest.size(); i++){
+      int temp = PutTest.get(i);
+      std::cout << temp << std::endl;
+   }
    PutTest.put(1);
    PutTest.put(2);
    PutTest.put(3);
    std::cout << "IntegerVector after put() method: " << std::endl;
-   std::cout << PutTest << std::endl;
+   for (int i = 0; i<PutTest.size(); i++){
+      int temp = PutTest.get(i);
+      std::cout << temp << std::endl;
+   }
    std::cout << "Expected : [1,2,3]" << std::endl;
 
    std::cout << "Testing put(int value, int index) Method:" <<std::endl;
    std::cout << "---------" << std::endl;
    PutTest.put(1,1);
-   std::cout << PutTest << std::endl;
+   for (int i = 0; i<PutTest.size(); i++){
+      int temp = PutTest.get(i);
+      std::cout << temp << std::endl;
+   }
    std::cout << "Expected : [1,1,3]" << std::endl;
    
    std::cout << "Testing get() Method:" << std::endl;
@@ -73,15 +82,22 @@ int main()
 
    std::cout << "Testing out_of_range: " << std::endl;
    std::cout << "----------" << std::endl;
-   std::cout << "Testing put(int value, int index) at invalid index" << std::endl
+   std::cout << "Testing put(int value, int index) at invalid index" << std::endl;
    PutTest.put(5,10);
-   std::cout << PutTest << std::endl;
+   for (int i = 0; i<PutTest.size(); i++){
+      int temp = PutTest.get(i);
+      std::cout << temp << std::endl;
+   }
    std::cout << "Expected : [1,1,3,5]" << std::endl;
    std::cout << "---------" << std::endl;
    std::cout << "Testing get() method at invalid index:" << std::endl;
-   int getInvalid = PutTest.get(10);
-   std::cout << getInvalid << std::endl;
-   std::cout << "Expected : out_of_range error" << std::endl;
+   try{
+      int getInvalid = PutTest.get(10);
+      std::cout << getInvalid << std::endl;
+   }catch(std::exception& e){
+      std::cerr << "out_of_range error caught:" << std::endl;
+      std::cerr << e.what() << std::endl;
+   }
    
  
    //-------------------------------------------------------------------------
