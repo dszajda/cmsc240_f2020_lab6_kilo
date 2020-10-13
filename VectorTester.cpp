@@ -116,11 +116,34 @@ int main()
 
    // using empty IntegerVector, test appending cv & dv from above 
    IntegerVector iv2;
+   IntegerVector iv3;
 
    std::cout << std::endl;
    std::cout << "--------------------------" << std::endl;
    std::cout << "appended-to IntegerVector:" << std::endl;
    std::cout << "--------------------------" << std::endl;
+   CharacterVector charAppend;
+   charAppend.put(1);
+   charAppend.put(2);
+   charAppend.put(3);
+   iv2.appendCharacterVector(charAppend);
+   std::cout << "IntegerVector after appendCharacterVector()" << std::endl; 
+   for (int i = 0; i < iv2.size(); i++){
+      std::cout << iv2.get(i) << std::endl;
+   }
+   std::cout << "Expected : [1,2,3]" << std::endl;
+   std::cout << std::endl;
+   
+   DoubleVector doubleAppend;
+   doubleAppend.put(1.0);
+   doubleAppend.put(2.0);
+   doubleAppend.put(3.0);
+   iv3.appendDoubleVector(doubleAppend); 
+   for (int i = 0; i < iv3.size(); i++){
+      std::cout << iv3.get(i) << std::endl;
+   }
+   std::cout << "IntegerVector after appendDoubleVector()" << std::endl;
+   std::cout << "Expected : [1,2,3]" << std::endl;
 
    //-------------------------------------------------------------------------
 
