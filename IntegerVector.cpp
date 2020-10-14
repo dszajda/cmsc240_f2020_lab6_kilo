@@ -16,7 +16,7 @@ int IntegerVector::size()
 // just return the integer at the specified index; use the at() method rather
 // than [] so that an out_of_range error will be thrown for an invalid index
 int IntegerVector::get(int index)  
-{
+{ 
    return integerVector.at(index);
 }
 
