@@ -17,6 +17,64 @@ int main()
    std::cout << "----------------" << std::endl;
    std::cout << "CharacterVector:" << std::endl;
    std::cout << "----------------" << std::endl;
+    
+   std::cout << "Testing put(char value) Method:" << std::endl;
+   std::cout << "---------" << std::endl;
+   CharacterVector CharTest;
+   std::cout << "CharacterVector before put() method: " << std::endl;
+   for (int i = 0; i < CharTest.size(); i++){
+      std::cout << CharTest.get(i) << " ";
+   } std::cout << std::endl;
+   std::cout << "Expected : []" << std::endl;
+   CharTest.put('a');
+   CharTest.put('b');
+   CharTest.put('c');
+   std::cout << "CharacterVector after put() method: " << std::endl;
+   for (int i = 0; i < CharTest.size(); i++){
+      std::cout << CharTest.get(i) << " ";
+   } std::cout << std::endl;
+   std::cout << "Expected : [a,b,c]" << std::endl;
+
+   std::cout << "Testing put(char value, int index) Method: " << std::endl;
+   std::cout << "---------" << std::endl;
+   CharTest.put('a',1);
+   for (int i = 0; i < CharTest.size(); i++){
+      std::cout << CharTest.get(i) << " ";
+   } std::cout << std::endl;
+   std::cout << "Expected : [a,a,c]" << std::endl;
+   
+   std::cout << "Testing get() Method:" << std::endl;
+   std::cout << "---------" << std::endl;
+   std::cout << CharTest.get(2) << std::endl;
+   std::cout << "Expected: [c]" << std::endl;
+
+   std::cout << "Testing size() Method:" << std::endl;
+   std::cout << "---------" << std::endl;
+   std::cout << "Test on empty CharacterVector:" << std::endl;
+   CharacterVector CharEmpty;
+   std::cout << CharEmpty.size() << std::endl;
+   std::cout << "Expected : [0]" << std::endl;
+   std::cout << "Test on CharacterVector with 3 elements:" << std::endl;
+   std::cout << CharTest.size() << std::endl;
+   std::cout << "Expected : [3]" << std::endl;
+
+   std::cout << "Testing out_of_range: " << std::endl;
+   std::cout << "----------" << std::endl;
+   std::cout << "Testing put(char value, int index) at invalid index (10)" << std::endl;
+   CharTest.put('d',10);
+   for (int i = 0; i < CharTest.size(); i++){
+      std::cout << CharTest.get(i);
+   } std::cout << std::endl;
+   std::cout << "Expected : [a,a,c,d]" << std::endl;
+   std::cout << "---------" << std::endl;
+   std::cout << "Testing get() method at invalid index (10):" << std::endl;
+   try{
+       std::cout << CharTest.get(10) << std::endl;
+   }catch(std::exception& e){
+      std::cerr << "out_of_range error caught:";
+      std::cerr << e.what() << std::endl;
+   }
+   std::cout << "Expected : some out of range error" << std::endl;
 
    //-------------------------------------------------------------------------
 
@@ -162,6 +220,28 @@ int main()
    std::cout << "----------------------------" << std::endl;
    std::cout << "appended-to CharacterVector:" << std::endl;
    std::cout << "----------------------------" << std::endl;
+   IntegerVector IntAppend1;
+   IntAppend1.put(97);
+   IntAppend1.put(98);
+   IntAppend1.put(99);
+   cv2.appendIntegerVector(IntAppend1);
+   std::cout << "IntegerVector after appendCharacterVector()" << std::endl;
+   for (int i = 0; i < cv2.size(); i++){
+      std::cout << cv2.get(i);
+   } std::cout << std::endl;
+   std::cout << "Expected : [a,b,c]" << std::endl;
+   std::cout << std::endl;
+
+   DoubleVector DblAppend1;
+   DblAppend1.put(100.0);
+   DblAppend1.put(101.0);
+   DblAppend1.put(103.0);
+   cv2.appendDoubleVector(DblAppend1);
+   for (int i = 0; i < cv2.size(); i++){
+      std::cout << cv2.get(i);
+   }  std::cout << std::endl;
+   std::cout << "IntegerVector after appendDoubleVector()" << std::endl;
+   std::cout << "Expected : [a,b,c]" << std::endl;
 
    //-------------------------------------------------------------------------
 
