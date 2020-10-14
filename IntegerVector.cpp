@@ -10,22 +10,14 @@ IntegerVector::~IntegerVector() {}
 
 int IntegerVector::size() 
 {
-<<<<<<< HEAD
-   return 0;
-=======
    return integerVector.size();
->>>>>>> ba84637f066a37c4e9b883cb22bf1c91bfa67ec4
 }
 
 // just return the integer at the specified index; use the at() method rather
 // than [] so that an out_of_range error will be thrown for an invalid index
 int IntegerVector::get(int index)  
 { 
-<<<<<<< HEAD
-   return 0;
-=======
    return integerVector.at(index);
->>>>>>> ba84637f066a37c4e9b883cb22bf1c91bfa67ec4
 }
 
 // if index is size-legitimate, put the value at that index;
