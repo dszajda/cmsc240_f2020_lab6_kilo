@@ -34,14 +34,14 @@ int main()
    for(int i = 0; i < PutTestDV.size(); i ++){
 	std::cout << PutTestDV.get(i) << std::endl;
    }
-   PutTestDV.put(1.0);
-   PutTestDV.put(2.0);
-   PutTestDV.put(3.0);
+   PutTestDV.put(1.5);
+   PutTestDV.put(2.5);
+   PutTestDV.put(3.5);
    std::cout << "DoubleVector after put() method: " << std::endl;
    for(int i = 0; i < PutTestDV.size(); i++){
    	std::cout << PutTestDV.get(i) << std::endl;
    }
-   std::cout << "Expected: [1.0, 2.0, 3.0]" << std::endl;
+   std::cout << "Expected: [1.5, 2.5, 3.5]" << std::endl;
    
    std::cout <<"Testing put(double value, int index) method: " << std::endl;
    std::cout << "-------------" << std::endl;
@@ -49,12 +49,12 @@ int main()
    for (int i = 0; i < PutTestDV.size(); i++){
   	std::cout << PutTestDV.get(i) << std::endl;
    } 
-   std::cout << "Expected: [1.0, 1.0, 3.0]" << std::endl;
+   std::cout << "Expected: [1.5, 1.0, 3.5]" << std::endl;
    
    std::cout << "Testing get() method: " << std::endl;
    std::cout << "-------------" << std::endl;
    std::cout << PutTestDV.get(0) << std::endl;
-   std::cout << "Expected: [1.0]" << std::endl;
+   std::cout << "Expected: [1.5]" << std::endl;
 
    std::cout << "Testing size() method: " << std::endl;
    std::cout << "-------------" << std::endl;
@@ -73,7 +73,7 @@ int main()
    for(int i = 0; i < PutTestDV.size(); i++){
    	std::cout << PutTestDV.get(i) << std::endl;
    }
-   std::cout << "Expected: [1.0, 1.0, 3.0, 4.0]" << std::endl;
+   std::cout << "Expected: [1.5, 1.0, 3.5, 4.0]" << std::endl;
    
    std::cout << "Testing get() method with invalid index" << std::endl;
    try{
