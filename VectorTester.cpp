@@ -174,11 +174,11 @@ int main()
    std::cout << "appended-to DoubleVector:" << std::endl;
    std::cout << "-------------------------" << std::endl;
    
-   CharacterVector charAppend;
-   charAppend.put(1);
-   charAppend.put(2);
-   charAppend.put(3);
-   dv2.appendCharacterVector(charAppend);
+   CharacterVector char1Append;
+   char1Append.put(1);
+   char1Append.put(2);
+   char1Append.put(3);
+   dv2.appendCharacterVector(char1Append);
    std::cout << "Double Vector after appendCharacterVector()" << std::endl;
    for(int i = 0; i < dv2.size(); i++){
    	std::cout << dv2.get(i) << std::endl;
