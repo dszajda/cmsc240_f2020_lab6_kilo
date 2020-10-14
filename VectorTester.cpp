@@ -215,6 +215,7 @@ int main()
 
    // using empty CharacterVector, test appending iv & dv from above
    CharacterVector cv2;
+   CharacterVector cv3;
 
    std::cout << std::endl;
    std::cout << "----------------------------" << std::endl;
@@ -236,12 +237,12 @@ int main()
    DblAppend1.put(100.0);
    DblAppend1.put(101.0);
    DblAppend1.put(103.0);
-   cv2.appendDoubleVector(DblAppend1);
-   for (int i = 0; i < cv2.size(); i++){
-      std::cout << cv2.get(i);
+   cv3.appendDoubleVector(DblAppend1);
+   for (int i = 0; i < cv3.size(); i++){
+      std::cout << cv3.get(i);
    }  std::cout << std::endl;
    std::cout << "IntegerVector after appendDoubleVector()" << std::endl;
-   std::cout << "Expected : [a,b,c]" << std::endl;
+   std::cout << "Expected : [d,e,g]" << std::endl;
 
    //-------------------------------------------------------------------------
 

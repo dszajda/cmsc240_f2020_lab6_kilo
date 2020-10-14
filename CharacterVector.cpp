@@ -24,7 +24,7 @@ char CharacterVector::get(int index)
 // otherwise, use push_back to append to the end of the vector
 void CharacterVector::put(char value, int index)
 {
-    if (index <= characterVector.size() && index >= 0)
+    if (index <= this->size() && index >= 0)
     {
         characterVector.at(index) = value;
     }else
